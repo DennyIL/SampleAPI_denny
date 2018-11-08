@@ -80,7 +80,7 @@ namespace SampleAPI.Controllers
             }
             catch (Exception xx)
             {
-                return BadRequest("Data Gaji : " + objGaji.NIK + " gagal di edit : " + xx.Message);
+                return BadRequest("Data Gaji : " + objGaji.NIK + " gagal di edit eaea : " + xx.Message);
             }
         }
 
