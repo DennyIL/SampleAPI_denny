@@ -76,11 +76,11 @@ namespace SampleAPI.Controllers
             try
             {
                 gajiDAL.Update(objGaji);
-                return Ok("Data Gaji : " + objGaji.NIK + " berhasil di edit");
+                return Ok("Data Gaji : " + objGaji.NIK + " berhasil di edit ---");
             }
             catch (Exception xx)
             {
-                return BadRequest("Data Gaji : " + objGaji.NIK + " gagal di edit eaea : " + xx.Message);
+                return BadRequest("Data Gaji : " + objGaji.NIK + " gagal di edit eaeaaa : " + xx.Message);
             }
         }
 
