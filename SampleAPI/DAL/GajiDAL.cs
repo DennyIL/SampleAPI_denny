@@ -35,7 +35,7 @@ namespace SampleAPI.DAL
             using (SqlConnection conn = new SqlConnection(Helper.GetConnectionString()))
             {
                 string strsql = @"SELECT * FROM Gaji WHERE id = @id";
-                var param = new { id = id};
+                var param = new { id = id };
                 var results = conn.QuerySingle<Gaji>(strsql, param);
                 return results;
 
@@ -121,6 +121,25 @@ namespace SampleAPI.DAL
                 {
                     throw new Exception($"Number : {ee.Number} ERROR : {ee.Message}");
                 }
+            }
+        }
+
+        /// <summary>
+        /// get gaji dengan nama
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Gaji> GetGajiWithNama()
+        {
+            using (SqlConnection conn = new SqlConnection(Helper.GetConnectionString()))
+            {
+                string strsql = @"SELECT * FROM Gaji as g LEFT JOIN as p Pegawai on g.NIK = p.NIK";
+                var result = conn.Query<Gaji, Pegawai, Gaji>(strsql, (g, p) =>
+                {
+                    g.Pegawai = p;
+                    return g;
+
+                }, splitOn:"NIK");
+                return result;
             }
         }
     }

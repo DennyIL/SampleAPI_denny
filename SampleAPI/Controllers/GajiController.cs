@@ -102,5 +102,16 @@ namespace SampleAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Get all gaji include pegawai
+        /// </summary>
+        /// <returns></returns>
+        public void GetGajiWithPegawai()
+        {
+            return gajiDAL.GetGajiWithNama();
+        }
+
     }
+    
+
 }

@@ -12,6 +12,7 @@ namespace SampleAPI.Models
         public string norek { get; set; }
         public Decimal gaji { get; set; }
 
-
+        //set database relation
+        public Pegawai Pegawai { get; set; }
     }
 }
