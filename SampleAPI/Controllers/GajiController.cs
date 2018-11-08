@@ -106,7 +106,9 @@ namespace SampleAPI.Controllers
         /// Get all gaji include pegawai
         /// </summary>
         /// <returns></returns>
-        public void GetGajiWithPegawai()
+        [Route("api/Gaji/GetGajiWithNama")]
+        [HttpGet]//di inisiaisi di awal apakah get/post/put dll
+        public IEnumerable<Gaji> GetGajiWithNama()
         {
             return gajiDAL.GetGajiWithNama();
         }

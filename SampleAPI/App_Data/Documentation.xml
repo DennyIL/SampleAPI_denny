@@ -481,6 +481,58 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:SampleAPI.Controllers.GajiController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SampleAPI.Controllers.GajiController.Get">
+            <summary>
+            Get all data gaji
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.GajiController.Get(System.String)">
+            <summary>
+            Get data gaji by ID
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.GajiController.Get(System.Decimal)">
+            <summary>
+            Controller jumlah gaji > param
+            </summary>
+            <param name="jumlah"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.GajiController.Post(SampleAPI.Models.Gaji)">
+            <summary>
+            INsert gaji baru
+            </summary>
+            <param name="objGaji"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.GajiController.Put(SampleAPI.Models.Gaji)">
+            <summary>
+            Edit data Gaji
+            </summary>
+            <param name="objGaji"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.GajiController.Put(System.String)">
+            <summary>
+            DELETE data GAJI by NIK
+            </summary>
+            <param name="NIK"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.GajiController.GetGajiWithNama">
+            <summary>
+            Get all gaji include pegawai
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:SampleAPI.Controllers.PegawaiController.Get">
             <summary>
             Menampilkan list pegawai
@@ -509,6 +561,13 @@
             <param name="dataPegawai"></param>
             <returns></returns>
         </member>
+        <member name="M:SampleAPI.Controllers.PegawaiController.Delete(System.String)">
+            <summary>
+            Mengahpus data Pegawai
+            </summary>
+            <param name="id">NIK</param>
+            <returns></returns>
+        </member>
         <member name="M:SampleAPI.Controllers.ValuesController.Get">
             <summary>
             Mengembalikan semua nama dalam array statis
@@ -535,6 +594,50 @@
             </summary>
             <param name="value">Parameter nama yang akan ditambahkan</param>
         </member>
+        <member name="M:SampleAPI.DAL.GajiDAL.GetAll">
+            <summary>
+            Query Get ALl pake Dupper
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SampleAPI.DAL.GajiDAL.GetByID(System.String)">
+            <summary>
+            Query get By ID, 
+            </summary>
+            <param name="id"></param>
+            <returns>Single Result</returns>
+        </member>
+        <member name="M:SampleAPI.DAL.GajiDAL.GetByJumlah(System.Decimal)">
+            <summary>
+            get gaji, yang dg jumlah tertentu
+            </summary>
+            <param name="jumlah"></param>
+            <returns>JUmlah >= parameter</returns>
+        </member>
+        <member name="M:SampleAPI.DAL.GajiDAL.Insert(SampleAPI.Models.Gaji)">
+            <summary>
+            insert data gaji
+            </summary>
+            <param name="obj">object gaji, selain ID</param>
+        </member>
+        <member name="M:SampleAPI.DAL.GajiDAL.Update(SampleAPI.Models.Gaji)">
+            <summary>
+            Update jumlah gaji
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:SampleAPI.DAL.GajiDAL.Delete(System.String)">
+            <summary>
+            Delete berdasarkan NIK aja
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:SampleAPI.DAL.GajiDAL.GetGajiWithNama">
+            <summary>
+            get gaji dengan nama
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:SampleAPI.DAL.Helper.GetConnectionString">
             <summary>
             Membuat helper untuk koneksi DB nama DEFAULT. 
@@ -550,6 +653,12 @@
             <summary>
             Konsep DAL (DATA access layer) adalah membuat function logic
             </summary>
+        </member>
+        <member name="M:SampleAPI.DAL.PegawaiDAL.Delete(System.String)">
+            <summary>
+            DELETE tabel Pegawai
+            </summary>
+            <param name="id">NIK pegawai</param>
         </member>
         <member name="M:SampleAPI.DAL.PegawaiDAL.GetAll">
             <summary>
